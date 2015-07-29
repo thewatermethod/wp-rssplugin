@@ -18,7 +18,7 @@
 						<h3><span><?php esc_attr_e( 'RSS Feeds', 'wp_admin_style' ); ?></span></h3>
 						<div class="inside">
 							<p><?php esc_attr_e(
-									'RSS Feeds (add or remove feed URL and click "submit" to update.',
+									'RSS Feeds Add or remove feed URL and click "submit" to update. Place each feed on a new line.',
 									'wp_admin_style'
 								); ?></p>
 						</div>
@@ -28,10 +28,10 @@
 
 							</textarea>
 						</div>
-						
+
 						<div class="inside">
 
-							<input class="button-primary" type="submit" name="Example" value="<?php esc_attr_e( 'Example Primary Button' ); ?>" />
+							<input class="button-primary" type="submit" name="Example" value="<?php esc_attr_e( 'Update' ); ?>" />
 
 						</div>
 						<!-- .inside -->
