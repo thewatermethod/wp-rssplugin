@@ -9,6 +9,16 @@
    License: GPL2
    */
 
+  /*
+  *
+  *  Global variables and the like
+  * 
+  */
+
+
+   $ccwf_rss_plugin_url = WP_PLUGIN_URL . 'rssautoposter';
+   $options = array();
+
 
 
    function ccwf_rssautoposter_menu(){
@@ -25,7 +35,7 @@
 			'RSS Auto Poster Options',
 			'manage_options',
 			'ccwf_rssautoposter',
-         'ccwf_rssautoposter_options_page'
+      'ccwf_rssautoposter_options_page'
 		);
 
    }
@@ -36,8 +46,16 @@
 
    function ccwf_rssautoposter_options_page(){
 
+      global $ccwf_rss_plugin_url;
+      global $options;
+
       if( !current_user_can('manage_options') ){
          wp_die( 'You do not have sufficient permissions to access this page.' );
+      }
+
+
+      if ( isset($_POST[]) ){
+
       }
 
       require( 'inc/rssautoposter_pagewrapper.php' );

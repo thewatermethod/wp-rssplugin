@@ -23,6 +23,8 @@
 								); ?></p>
 						</div>
 
+						<input tag="hidden" name="ccwf_rss_autoposter_form_submitted" value="true"/>
+
 						<div class="inside">
 							<textarea id="" name="" cols="80" rows="10" class="all-options">
 
