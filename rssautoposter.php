@@ -1,66 +1,40 @@
 <?php
    /*
    Plugin Name: RSS Auto Poster 
-   Plugin URI: http://www.capecodwebfoundry.com
+   Plugin URI: http://www.twilitgrotto.com
    Description: Creates draft posts from RSS feeds!
    Version: 1.0
    Author: Matt Bevilacqua
    Author URI: http://www.mattbev.com
-   License: GPL2
-   */
+   License: GPL3   */
 
-  /*
-  *
-  *  Global variables and the like
-  * 
-  */
+  if ( ! function_exists( 'add_filter' ) ) {
+    header( 'Status: 403 Forbidden' );
+    header( 'HTTP/1.1 403 Forbidden' );
+    exit();
+  }
 
+   /* set up the rss feed custom post type*/
+   require_once( '/includes/rss_feed_post_type.php' );
+ 
+   /* set up the plugin options page */
+   require_once('/includes/rss_feed_custom_options_page.php');
 
-   $ccwf_rss_plugin_url = WP_PLUGIN_URL . 'rssautoposter';
-   $options = array();
-
-
-
-   function ccwf_rssautoposter_menu(){
-
-   		/*
-       *
-       *  add options page 
-	     *  add_options_page( $page_title, $menu_title, $capability, $menu_slug, $function);
-   		 *
-       */
-
-		add_options_page(
-			'RSS Auto Poster',
-			'RSS Auto Poster Options',
-			'manage_options',
-			'ccwf_rssautoposter',
-      'ccwf_rssautoposter_options_page'
-		);
-
-   }
-
-   add_action( 'admin_menu', 'ccwf_rssautoposter_menu' );
+   /* set up the rss meta boxes*/
+   require_once('/includes/rss_feed_meta_boxes.php');
 
 
-
-   function ccwf_rssautoposter_options_page(){
-
-      global $ccwf_rss_plugin_url;
-      global $options;
-
-      if( !current_user_can('manage_options') ){
-         wp_die( 'You do not have sufficient permissions to access this page.' );
-      }
-
-
-      if ( isset($_POST[]) ){
-
-      }
-
-      require( 'inc/rssautoposter_pagewrapper.php' );
-
-   }
+if (!function_exists('write_log')) {
+    function write_log ( $log )  {
+        if ( true === WP_DEBUG ) {
+            if ( is_array( $log ) || is_object( $log ) ) {
+                error_log( print_r( $log, true ) );
+            } else {
+                error_log( $log );
+            }
+        }
+    }
+}
 
 
 ?>
