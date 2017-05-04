@@ -14,6 +14,10 @@
     exit();
   }
 
+   /* Get the RSS feed stuff from Wordpress
+   */ 
+   require_once( ABSPATH . WPINC . '/feed.php' );
+
    /* set up the rss feed custom post type*/
    require_once( '/includes/rss_feed_post_type.php' );
  
