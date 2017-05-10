@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 // Register Custom Post Type
 function tg_rss_custom_post_Type() {

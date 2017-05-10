@@ -17,6 +17,12 @@
     /* Get the RSS feed stuff from Wordpress  */ 
     require_once( ABSPATH . WPINC . '/feed.php' );
 
+    /* some code for the terms */
+    require_once('/includes/dictionary.php');
+
+    /* transients*/
+    require_once('/includes/rss_feed_set_transients.php');
+
     /* gets possible terms from content*/
     require_once( '/includes/rss_feed_terms.php');
 
@@ -41,25 +47,11 @@
     /* function to handle all the deactivation hooks */
     require_once('/includes/rss_feed_deactivate.php');
 
+
     /* activation hooks */
     register_activation_hook( __FILE__, 'rss_feed_create_category' );
     register_activation_hook( __FILE__, 'rss_feed_parse_feed_schedule' );
+    register_activation_hook( __FILE__, 'set_all_transients');
 
     /* deactivation hook */
     register_deactivation_hook( __FILE__, 'rss_feed_deactivate' );
-
-
-if (!function_exists('write_log')) {
-    function write_log ( $log )  {
-        if ( true === WP_DEBUG ) {
-            if ( is_array( $log ) || is_object( $log ) ) {
-                error_log( print_r( $log, true ) );
-            } else {
-                error_log( $log );
-            }
-        }
-    }
-}
-
-
-?>

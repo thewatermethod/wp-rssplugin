@@ -14,4 +14,4 @@ function rss_feed_catch_that_image( $source ) {
   }
 
   return $first_img;
-}	
+}
