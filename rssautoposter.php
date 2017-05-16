@@ -18,34 +18,34 @@
     require_once( ABSPATH . WPINC . '/feed.php' );
 
     /* some code for the terms */
-    require_once('/includes/dictionary.php');
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/dictionary.php' );
 
     /* transients*/
-    require_once('/includes/rss_feed_set_transients.php');
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_set_transients.php');
 
     /* gets possible terms from content*/
-    require_once( '/includes/rss_feed_terms.php');
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_terms.php');
 
     /* the catch that image function */
-    require_once( '/includes/rss_feed_catch_that_image.php'); 
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_catch_that_image.php'); 
 
     /* set up the rss feed custom post type*/
-    require_once( '/includes/rss_feed_post_type.php' );
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_post_type.php' );
  
     /* set up the plugin options page */
-    require_once('/includes/rss_feed_custom_options_page.php');
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_custom_options_page.php');
 
     /* set up the rss meta boxes*/
-    require_once('/includes/rss_feed_meta_boxes.php');
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_meta_boxes.php');
 
     /* creates category*/
-    require_once('/includes/rss_feed_create_category.php');
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_create_category.php');
 
     /* sets up the cron job */
-    require_once('/includes/rss_feed_schedule_cron.php');
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_schedule_cron.php');
 
     /* function to handle all the deactivation hooks */
-    require_once('/includes/rss_feed_deactivate.php');
+    require_once( plugin_dir_path( __FILE__ ) . '/includes/rss_feed_deactivate.php');
 
 
     /* activation hooks */
